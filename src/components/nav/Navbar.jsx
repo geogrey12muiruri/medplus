@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import medplusLogo from "../../assets/medplus.svg"; // Import the SVG logo
 
+// import nav.css
+
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
