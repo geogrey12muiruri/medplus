@@ -57,7 +57,7 @@ const dummyBlogs = [
   // Add more dummy blog data as needed
 
 
-const CommunitySection = () => {
+const Blogs = () => {
     const [isVisible, setIsVisible] = useState([]);
   
     useEffect(() => {
@@ -128,4 +128,4 @@ const CommunitySection = () => {
     );
   };
   
-  export default CommunitySection;
+  export default Blogs;
