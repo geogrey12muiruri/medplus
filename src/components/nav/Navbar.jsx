@@ -61,15 +61,15 @@ const Navbar = () => {
             <NavLink to="/services" label="Services" hasDropdown />
             <NavLink to="/diseases" label="Diseases" hasDropdown />
             <NavLink to="/resources" label="Resources" hasDropdown />
-            <NavLink to="/careers" label="Careers" />
+            <NavLink to="/socials" label="Socials" />
             <NavLink to="/blogs" label="Blogs" />
           </div>
 
           {/* Apply Now Button */}
           <div>
             <Link
-              to="/apply"
-              className="text-slate-950 hover:text-blue-500 hover:underline px-4 py-2 rounded-md"
+              to="/register"
+              className="text-slate-950 hover:text-gray-600 hover:underline px-4 py-2 rounded-md"
             >
               Join Us
             </Link>
@@ -83,8 +83,8 @@ const Navbar = () => {
           <NavLink to="/services" label="Services" hasDropdown />
           <NavLink to="/courses" label="Courses" hasDropdown />
           <NavLink to="/resources" label="Resources" hasDropdown />
-          <NavLink to="/careers" label="Careers" />
-          <NavLink to="/contacts" label="Contacts" />
+          <NavLink to="/socials" label="Socials" />
+          <NavLink to="/login" label="Login" />
         </div>
       </Modal>
     </nav>
