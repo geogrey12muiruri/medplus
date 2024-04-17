@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { CustomButton, Loading, TextInput } from "../components";
+import { apiRequest } from "../utils";
 
 const ResetPassword = () => {
   const [errMsg, setErrMsg] = useState("");
@@ -14,8 +15,29 @@ const ResetPassword = () => {
   } = useForm({
     mode: "onChange",
   });
+  const onSubmit = async (uri, token, _id) => {
+    setIsSubmitting(true);
+    setErrMsg("");
 
-  const onSubmit = async (data) => {};
+    try {
+      const response = await apiRequest({
+        uri: uri || "/request-passwordreset",
+        method: "POST",
+        data: { email: data.email },
+      });
+  
+      if (response.status === "success") {
+        // Show success message to the user
+      } else {
+        // Show error message to the user
+      }
+
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error(error);
+      // Show error message to the user
+    }
+  };
 
   return (
     <div className='w-full h-[100vh] bg-bgColor flex items-center justify-center p-6'>
@@ -27,7 +49,7 @@ const ResetPassword = () => {
         </span>
 
         <form
-          onSubmit={handleSubmit(onsubmit)}
+          onSubmit={handleSubmit(onSubmit)}
           className='py-4 flex flex-col gap-5'
         >
           <TextInput

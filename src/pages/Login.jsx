@@ -9,7 +9,8 @@ import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
 import bgImage from "../assets/background2.jpg";
 import medplusLogo from "../assets/medplus.svg";
-
+import { UserLogin } from "../redux/userSlice";
+import { apiRequest } from "../utils";
 const Login = () => {
   const {
     register,
@@ -19,7 +20,32 @@ const Login = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const res = await apiRequest ({
+        url: "/auth/login",
+        data: data,
+        method: "post",
+      });
+
+      if(res?.status === "failed") {
+        setErrMsg(res);
+        
+      } else {
+        setErrMsg("")
+
+        const newData = {token: res?.token, ...res?.user};
+        dispatch(UserLogin(newData));
+        window.location.replace("/socials")
+      }
+      setIsSubmitting(false);
+      
+    } catch (error) {
+      setErrMsg({ message: "An error occurred. Please try again", status: "failed" });
+    }
+    setIsSubmitting(false);
+  };
 
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);

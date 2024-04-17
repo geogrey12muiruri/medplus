@@ -21,14 +21,16 @@ function Layout() {
 function App() {
   const { theme } = useSelector((state) => state.theme);
 
+  // Check if the current route is the Socials page
+  const isSocialsPage = useLocation().pathname === '/socials';
+
   return (
     <div data-theme={theme} className='w-full min-h-[100vh]'>
-    <Contact />
-      <Navbar />
+      {!isSocialsPage && <Contact />}
+      {!isSocialsPage && <Navbar />}
       <Routes>
-      
         <Route element={<Layout />}>
-          <Route path='/' element={<HomePage/>} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/profile/:id?' element={<Profile />} />
         </Route>
 
@@ -36,7 +38,6 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/reset-password' element={<ResetPassword />} />
         <Route path='/socials' element={<Socials />} />
-
       </Routes>
       <Footer />
     </div>

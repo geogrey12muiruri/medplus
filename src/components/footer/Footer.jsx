@@ -4,31 +4,34 @@ import medplusLogo from "../../assets/medplus.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-500 dark:bg-gray-900">
+    <footer className="bg-blue-500 text-white">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
-          <Link to="/" className="text-white text-lg font-bold flex items-center outline rounded  ">
-            {/* Provided SVG Logo */}
-            <img
-              src={medplusLogo}
-              alt="MedPlus Logo"
-              className="h-10 mr-2 inline object-contain cursor-pointer text-white bg-orange-500 outline-orange-500"
-            />
-            <span className="bg-blue-500 text-white px-2 py-1 rounded outline-orange-500">Medplus<sup>+</sup></span>
-          </Link> 
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+          <Link to="/" className="flex items-center rounded-xl overflow-hidden">
+      {/* Left Section with SVG */}
+      <div className="bg-yellow-400 p-2">
+      <svg fill="#FFFFFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 431.771 431.771" xml:space="preserve" stroke="#ffa500"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M332.314,239.837c2.292,6.147,8.154,10.219,14.711,10.219h69.044c8.664,0,15.701-7.029,15.701-15.701 c0-8.66-7.037-15.701-15.701-15.701h-58.144L326.647,134.7c-2.236-6.014-7.927-10.057-14.335-10.215 c-6.455-0.134-12.282,3.619-14.811,9.506l-28.236,65.866L232.733,63.702c-1.884-7.077-8.491-11.936-15.726-11.621 c-7.309,0.26-13.471,5.534-14.853,12.717l-43.703,226.947L127.473,169.25c-1.688-6.658-7.494-11.447-14.349-11.834 c-6.899-0.294-13.167,3.749-15.577,10.169l-22.506,60.018H15.699C7.025,227.603,0,234.631,0,243.304 c0,8.664,7.025,15.7,15.699,15.7h70.214c6.546,0,12.403-4.063,14.704-10.198l8.706-23.22l35.962,142.256 c1.773,6.993,8.057,11.862,15.214,11.862c0.156,0,0.307,0,0.463-0.008c7.356-0.217,13.573-5.507,14.966-12.728l44.15-229.239 l30.612,114.021c1.731,6.464,7.358,11.116,14.046,11.598c6.561,0.433,12.908-3.326,15.537-9.474l30.629-71.471L332.314,239.837z"></path> </g> </g> </g></svg>
+
+      </div>
+
+      {/* Right Section with Text */}
+      <div className="bg-blue-500 text-white p-2 font-bold">
+        Medplus<sup>+</sup>
+      </div>
+    </Link> 
+            <ul className="text-gray-500 dark:text-white font-medium">
               <li className="mb-4">
-                <a href="/about" className="hover:underline  text-slate-950 font-mono">About</a>
+                <a href="/about" className="hover:underline  text-text-white font-mono">About</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Diseases</a>
+                <a href="#" className="hover:underline  text-text-white font-mono">Diseases</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Cases</a>
+                <a href="#" className="hover:underline  text-white font-mono">Cases</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Blog</a>
+                <a href="#" className="hover:underline  text-white font-mono">Blog</a>
               </li>
             </ul>
           </div>
@@ -36,48 +39,48 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-slate-950 font-mono uppercase dark:text-white">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Explore Library</a>
+                <a href="#" className="hover:underline  text-white font-mono">Explore Library</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Twitter</a>
+                <a href="#" className="hover:underline  text-whitefont-mono">Twitter</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Facebook</a>
+                <a href="#" className="hover:underline  text-white font-mono">Facebook</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a href="#" className="hover:underline text-slate-950 font-mono">Privacy Policy</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Licensing</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">Terms &amp; Conditions</a>
+                <a href="#" className="hover:underline  text-white font-mono">Contact Us</a>
               </li>
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold  text-slate-950 font-mono uppercase dark:text-white">Download</h2>
+            <h2 className="mb-6 text-sm font-semibold textwhite uppercase dark:text-white">Legal</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">NewsLetter</a>
+                <a href="#" className="hover:underline text-white font-mono">Privacy Policy</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline  text-slate-950 font-mono">blogs</a>
+                <a href="#" className="hover:underline  white-text-slate-950 font-mono">Licensing</a>
+              </li>
+              <li className="mb-4">
+              </li>
+                <a href="#" className="hover:underline  text-whitefont-mono">Terms &amp; Conditions</a>
+            </ul>
+          </div>
+          <div>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 className="mb-6 text-sm font-semibold  text-whitefont-mono uppercase dark:text-white">Download</h2>
+              <li className="mb-4">
+              </li>
+                <a href="#" className="hover:underline  text-white font-mono">NewsLetter</a>
+              <li className="mb-4">
+                <a href="#" className="hover:underline  text-white font-mono">blogs</a>
               </li>
              
             </ul>
           </div>
         </div>
         <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-          <span className="text-sm  text-slate-950 font-mono dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Medplus™</a>. All Rights Reserved.</span>
+          <span className="text-sm  text-white font-mono dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Medplus™</a>. All Rights Reserved.</span>
           <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
               <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">

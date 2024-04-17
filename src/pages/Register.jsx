@@ -9,9 +9,13 @@ import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
 import bgImage from "../assets/background2.jpg";
 import medplusLogo from "../assets/medplus.svg";
+import {apiRequest} from '../utils';
 
 
 const Register = () => {
+  const [errMsg, setErrMsg] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -21,11 +25,31 @@ const Register = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try{
+       const res = await apiRequest({
+      url: "/auth/register",
+      data: data,
+      method: "POST",
+       });
 
-  const [errMsg, setErrMsg] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const dispatch = useDispatch();
+       if(res?.status === 'failed') {
+        setErrMsg(res);
+       } else {
+        setErrMsg(res);
+        setTimeout(() => {
+          window.location.replace("/login");
+       }, 5000);
+        }
+        setIsSubmitting(false);
+    } catch (error) {
+      console.log(error)
+      setIsSubmitting(false);
+    }
+  };
+
+  
 
   return (
     <div className='bg-bgColor w-full h-[100vh] flex items-center justify-center p-6'>
