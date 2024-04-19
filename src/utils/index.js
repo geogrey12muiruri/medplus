@@ -166,4 +166,3 @@ export const unfriendUser = async (token, id) => {
         console.log(error);
     }
 }
-
